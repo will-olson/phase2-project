@@ -1,0 +1,226 @@
+:root {
+    --font-family-sans: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    --header-font-size: 2.4rem;
+    --description-font-size: 1.4rem;
+    --font-weight-normal: 400;
+    --font-weight-bold: 600;
+
+    /* Light mode colors */
+    --color-text: rgba(0, 0, 0, 0.9);
+    --color-link: #0a66c2;
+    --color-link-hover: #004182;
+    --color-background: #f8fafd;
+    --content-background: #ffffff;
+    --content-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --navbar-background: #ffffff;
+    --navbar-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    /* Dark mode colors */
+    --dark-color-text: rgba(255, 255, 255, 0.9);
+    --dark-color-link: #76c7f6;
+    --dark-color-link-hover: #4a99c2;
+    --dark-color-background: #121212;
+    --dark-content-background: #1e1e1e;
+    --dark-content-box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    --dark-navbar-background: #1e1e1e;
+    --dark-navbar-box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+
+    /* Shared styles */
+    --content-padding: 1.6rem;
+    --content-border-radius: 0.8rem; 
+    --tile-min-width: 200px;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    font-size: var(--description-font-size);
+    line-height: 1.5;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+    text-align: center; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    color: var(--dark-color-text);
+    background-color: var(--dark-color-background);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--navbar-background);
+    padding: var(--content-padding);
+    box-shadow: var(--navbar-box-shadow);
+    margin-bottom: 2rem;
+    border-radius: var(--content-border-radius); 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .navbar {
+    background-color: var(--dark-navbar-background);
+    box-shadow: var(--dark-navbar-box-shadow);
+}
+
+.navbar a {
+    color: var(--color-link);
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+    padding: 0.5rem 1rem;
+    border-radius: var(--content-border-radius); 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: var(--color-link-hover);
+    color: #ffffff;
+}
+
+body.dark-mode .navbar a {
+    color: var(--dark-color-link);
+}
+
+body.dark-mode .navbar a:hover {
+    background-color: var(--dark-color-link-hover);
+    color: #ffffff;
+}
+
+.header {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-background);
+    box-shadow: var(--content-box-shadow);
+    margin-bottom: 2rem;
+    border-radius: var(--content-border-radius); 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .header {
+    background-color: var(--dark-content-background);
+    box-shadow: var(--dark-content-box-shadow);
+}
+
+h2.section-title {
+    font-size: var(--header-font-size);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 1rem;
+}
+
+.content-square {
+    background-color: var(--content-background);
+    padding: var(--content-padding);
+    border-radius: var(--content-border-radius); 
+    box-shadow: var(--content-box-shadow);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .content-square {
+    background-color: var(--dark-content-background);
+    box-shadow: var(--dark-content-box-shadow);
+}
+
+.container {
+    padding: 2rem;
+    text-align: center;
+}
+
+.company-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.company-tile {
+    min-width: var(--tile-min-width);
+    flex: 1 1 auto;
+    background-color: var(--content-background);
+    padding: 1rem;
+    border-radius: var(--content-border-radius); 
+    box-shadow: var(--content-box-shadow);
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .company-tile {
+    background-color: var(--dark-content-background);
+    box-shadow: var(--dark-content-box-shadow);
+}
+
+.company-tile h3, .company-tile h4 {
+    margin: 0.5rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.company-link a, .indeed-link a {
+    color: var(--color-link);
+    text-decoration: underline;
+}
+
+.company-link a:hover, .indeed-link a:hover {
+    color: var(--color-link-hover);
+}
+
+body.dark-mode .company-link a, body.dark-mode .indeed-link a {
+    color: var(--dark-color-link);
+}
+
+body.dark-mode .company-link a:hover, body.dark-mode .indeed-link a:hover {
+    color: var(--dark-color-link-hover);
+}
+
+.link {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+.link:hover {
+    color: var(--color-link-hover);
+}
+
+body.dark-mode .link {
+    color: var(--dark-color-link);
+}
+
+body.dark-mode .link:hover {
+    color: var(--dark-color-link-hover);
+}
+
+button {
+    font-family: var(--font-family-sans);
+    font-size: var(--description-font-size);
+    font-weight: var(--font-weight-normal);
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--content-border-radius);
+    background-color: var(--color-link);
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-link-hover);
+}
+
+body.dark-mode button {
+    background-color: var(--dark-color-link);
+}
+
+body.dark-mode button:hover {
+    background-color: var(--dark-color-link-hover);
+}
