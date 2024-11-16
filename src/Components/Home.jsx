@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Header from './Header'
 import Navbar from './Navbar'
 import overview from './Overview'
-import CSS from './App.css';
 
 function Home() {
     console.log(overview.AI.Overview);
