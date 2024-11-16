@@ -11,7 +11,7 @@ function Media() {
 
     useEffect(() => {
         if(!isLoading) {
-            fetch('http://localhost:6001/Media')
+            fetch(process.env.REACT_APP_JSON_SERVER + "/Media")
             .then(resp => resp.json())
             .then(data => {
                 setCompanies(data)

@@ -12,7 +12,7 @@ function CompanyCard({ company, category, updateFavoriteStatus, canDelete, handl
     function handleFavorite() {
         const favorite = !isFavorite
         const newData = { ...company, favorite}
-        fetch(`http://localhost:6001/${category}/${company.id}`, {
+        fetch(`${process.env.REACT_APP_JSON_SERVER}/${category}/${company.id}`, {
             method:'PATCH',
             headers:{
                 'Content-Type': 'application/json'

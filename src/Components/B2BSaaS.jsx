@@ -11,7 +11,7 @@ function B2BSaaS() {
 
     useEffect(() => {
         if(!isLoading) {
-            fetch('http://localhost:6001/B2BSaaS')
+            fetch(process.env.REACT_APP_JSON_SERVER + "/B2BSaaS")
             .then(resp => resp.json())
             .then(data => {
                 setCompanies(data)

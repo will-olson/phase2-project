@@ -16,7 +16,7 @@ function CommunitySubmissions() {
 
     useEffect(() => {
         if(!isLoading) {
-            fetch('http://localhost:6001/Community')
+            fetch(process.env.REACT_APP_JSON_SERVER +"/Community")
             .then(resp => resp.json())
             .then(data => {
                 setCompanies(data)
@@ -51,7 +51,7 @@ function CommunitySubmissions() {
         setName('')
         setLink('')
         setIndeedLink('')
-        fetch(`http://localhost:6001/Community`, {
+        fetch(process.env.REACT_APP_JSON_SERVER + "/Community", {
             method: "POST",
             body: JSON.stringify(newCompany),
             headers: {
@@ -66,7 +66,7 @@ function CommunitySubmissions() {
     }
 
     function handleDelete(company){
-        fetch(`http://localhost:6001/Community/${company.id}`, {
+        fetch(`${process.env.REACT_APP_JSON_SERVER}/${company.id}`, {
             method:'DELETE'
         })
         .then(resp => resp.json)

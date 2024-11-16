@@ -11,7 +11,7 @@ function BigTech() {
 
     useEffect(() => {
         if(!isLoading) {
-            fetch('http://localhost:6001/BigTech')
+            fetch(process.env.REACT_APP_JSON_SERVER + "/BigTech")
             .then(resp => resp.json())
             .then(data => {
                 setCompanies(data)

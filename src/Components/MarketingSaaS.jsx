@@ -11,7 +11,7 @@ function MarketingSaaS() {
 
     useEffect(() => {
         if(!isLoading) {
-            fetch('http://localhost:6001/MarketingSaaS')
+            fetch(process.env.REACT_APP_JSON_SERVER + "/MarketingSaaS")
             .then(resp => resp.json())
             .then(data => {
                 setCompanies(data)

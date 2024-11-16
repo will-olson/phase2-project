@@ -11,7 +11,7 @@ function Healthcare() {
 
     useEffect(() => {
         if(!isLoading) {
-            fetch('http://localhost:6001/Healthcare')
+            fetch(process.env.REACT_APP_JSON_SERVER + "/Healthcare")
             .then(resp => resp.json())
             .then(data => {
                 setCompanies(data)

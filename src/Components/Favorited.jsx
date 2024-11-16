@@ -23,7 +23,7 @@ function Favorited() {
     // Fetch all data with category information
     Promise.all(
       endpoints.map(endpoint =>
-        fetch(`http://localhost:6001/${endpoint}`)
+        fetch(`${process.env.REACT_APP_JSON_SERVER}/${endpoint}`)
           .then(resp => resp.json())
           .then(data => data.map(company => ({ ...company, category: endpoint })))
       )

@@ -11,7 +11,7 @@ function AI() {
 
     useEffect(() => {
         if(!isLoading) {
-            fetch('http://localhost:6001/AI')
+            fetch(process.env.REACT_APP_JSON_SERVER + "/AI")
             .then(resp => resp.json())
             .then(data => {
                 setCompanies(data)

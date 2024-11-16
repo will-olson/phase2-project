@@ -11,7 +11,7 @@ function IndustryLeaders() {
 
     useEffect(() => {
         if(!isLoading) {
-            fetch('http://localhost:6001/IndustryLeaders')
+            fetch(process.env.REACT_APP_JSON_SERVER + "/IndustryLeaders")
             .then(resp => resp.json())
             .then(data => {
                 setCompanies(data)
